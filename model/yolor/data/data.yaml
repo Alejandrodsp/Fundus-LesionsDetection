@@ -1,0 +1,4 @@
+train: ../../../datasets/DDR-CROPPING-SAHI/train
+val: ../../../datasets/DDR-CROPPING-SAHI/valid
+nc: 4
+names: ['EX', 'HE', 'SE', 'MA']
