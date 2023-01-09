@@ -1,11 +1,18 @@
 # Improved-Fundus-Lesions-Detection
-A new method that uses a YOLOR-CSP architecture combined with the Slicing Aided Hyper Inference framework to improve detection of fundus lesions.
+<img src="https://user-images.githubusercontent.com/54383618/211225454-be653f9c-60aa-499e-abc4-c5e19e026a8a.gif" width="400" height="400"/>
+A new method that uses a YOLOR-CSP architecture combined with the SAHI framework to improve detection of fundus lesions.
+
+
+
 ### 🔧 Installation
 ```
 git clone https://github.com/Alejandrodsp/Fundus-Lesions-Detection
 cd Fundus-Lesions-Detection
 pip install -r requirements.txt
 ```
+- [Download the proposed work with SGD here](https://github.com/Alejandrodsp/Fundus-Lesions-Detection/releases/download/proposed-work-SGD/best.pt)
+- [Download the proposed work with Adam here](https://github.com/Alejandrodsp/Fundus-Lesions-Detection/releases/download/proposed-work-Adam/best.pt)
+- [Download pre-training weights here](https://github.com/Alejandrodsp/Fundus-Lesions-Detection/releases/download/pre-training/yolor_csp.pt)
 ### ⚙️ Pre-processing steps
 1. **Cropping**
 ```
@@ -51,13 +58,13 @@ python train.py --batch-size 16 --img 640 640 --data data.yaml --cfg cfg/yolor_c
 ### :heavy_check_mark: Inference
 ```
 cd model/yolor
-python detect.py --source ../../datasets/DDR/test/images --cfg cfg/yolor_csp.cfg --weights runs/train/DDR-CROPPING-SAHI-SGD/best.pt --conf 0.25 --img-size 640 --device 0
+python detect.py --source ../../datasets/DDR/test/images --cfg cfg/yolor_csp.cfg --weights best.pt --conf 0.25 --img-size 640 --device 0
 ```
 
 ### :chart_with_upwards_trend: Testing
 ```
 cd model/yolor
-python test.py --data data/data.yaml --iou 0.45 --weights runs/train/DDR-CROPPING-SAHI-SGD/best.pt --batch 16 --img 640 --cfg cfg/yolor_csp.cfg --verbose
+python test.py --data data/data.yaml --iou 0.45 --weights best.pt --batch 16 --img 640 --cfg cfg/yolor_csp.cfg --verbose
 ```
 
 ### ✒️ Authors
