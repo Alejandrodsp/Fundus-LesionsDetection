@@ -1,4 +1,4 @@
-# Improved-Fundus-Lesions-Detection
+# Improved Fundus Lesions Detection
 <img src="https://user-images.githubusercontent.com/54383618/211225454-be653f9c-60aa-499e-abc4-c5e19e026a8a.gif" width="400" height="400"/>
 A new method that uses a YOLOR-CSP architecture combined with the SAHI framework to improve detection of fundus lesions.
 
